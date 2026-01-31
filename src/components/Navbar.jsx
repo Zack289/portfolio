@@ -13,7 +13,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-base-300 sticky top-0 z-50">
+    <nav className="bg-base-300 sticky top-0 z-50 " >
       <div className="max-w-5xl mx-auto px-4 flex justify-between items-center h-16">
 
         {/* LOGO / BRAND */}
@@ -64,9 +64,7 @@ function Navbar() {
             <li
               key={link.id}
               className="
-                relative px-3 py-1.5 rounded-lg
-                hover:bg-primary/10 hover:text-primary
-                transition-colors duration-200
+                relative btn btn-ghost
                 after:absolute after:left-0 after:-bottom-1
                 after:h-0.5 after:w-0 after:bg-primary
                 after:transition-all after:duration-300
