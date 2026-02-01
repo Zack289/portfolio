@@ -1,12 +1,13 @@
-import { Send } from "lucide-react";
+import { Send, Code, CodeXml } from "lucide-react";
 
 function Data() {
   return (
     <>
       <div className=" flex flex-col items-start justify-center gap-4 sm:gap-6 p-4 sm:p-6">
         {/* Name */}
+        <span><Code /></span>
         <h1 className="text-5xl font-bold">Laxman Bhandari</h1>
-
+          <span><CodeXml /></span>
         {/* Title */}
         <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-secondary relative ">
           {" "}
@@ -26,8 +27,7 @@ function Data() {
 
         {/* Description */}
         <p className="home-desc text-base sm:text-lg text-gray-600 max-w-md leading-relaxed">
-          I'm a creative designer based in Nepal, passionate and dedicated to
-          delivering high-quality work.
+          Passionate developer crafting innovative, efficient, and user-friendly digital experiences with clean, elegant code.  
         </p>
 
         {/* Call-to-action */}

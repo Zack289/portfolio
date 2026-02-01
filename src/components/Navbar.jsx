@@ -31,7 +31,7 @@ function Navbar() {
                 after:absolute after:left-0 after:-bottom-1
                 after:h-0.5 after:w-0 after:bg-primary
                 after:transition-all after:duration-300
-                hover:after:w-full
+                hover:after:w-full 
               "
             >
               <a href={`#${link.id}`}>{link.title}</a>

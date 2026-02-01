@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import CursorBg from "./components/CrusorBg";
 import AnimatedCursor from "react-animated-cursor";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           border: "3px solid var(--cursor-color)",
         }}
       />
+      <ScrollToTop />
       <Navbar />
       <Hero />
       <About />
