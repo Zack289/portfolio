@@ -4,7 +4,6 @@ import { Container } from "@/components/ui/Container";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { socials } from "@/data/socials";
 import { profile } from "@/data/profile";
-import { scrollToTop } from "@/utils/scrollTo";
 
 export function Footer() {
   const year = new Date().getFullYear();

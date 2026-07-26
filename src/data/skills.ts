@@ -3,6 +3,12 @@ import type { Skill } from "@/types";
 // `icon` maps to a react-icons/si component name, resolved in SkillCard.
 export const skills: Skill[] = [
   { id: "react", name: "React", category: "Frontend", icon: "SiReact" },
+  {
+    id: "reactnative",
+    name: "React Native",
+    category: "Frontend",
+    icon: "SiReact",
+  },
   { id: "nextjs", name: "Next.js", category: "Frontend", icon: "SiNextdotjs" },
   {
     id: "typescript",
@@ -17,7 +23,7 @@ export const skills: Skill[] = [
     icon: "SiJavascript",
   },
   { id: "html5", name: "HTML", category: "Frontend", icon: "SiHtml5" },
-  { id: "css3", name: "CSS", category: "Frontend", icon: "SiCss3" },
+  { id: "css3", name: "CSS", category: "Frontend", icon: "SiCss" },
   {
     id: "tailwind",
     name: "Tailwind CSS",
@@ -43,16 +49,9 @@ export const skills: Skill[] = [
 
   { id: "git", name: "Git", category: "Tools", icon: "SiGit" },
   { id: "github", name: "GitHub", category: "Tools", icon: "SiGithub" },
-  {
-    id: "vscode",
-    name: "VS Code",
-    category: "Tools",
-    icon: "SiVisualstudiocode",
-  },
   { id: "postman", name: "Postman", category: "Tools", icon: "SiPostman" },
   { id: "vite", name: "Vite", category: "Tools", icon: "SiVite" },
   { id: "npm", name: "npm", category: "Tools", icon: "SiNpm" },
-  { id: "figma", name: "Figma", category: "Tools", icon: "SiFigma" },
 
   { id: "restapi", name: "REST API", category: "Other", icon: "SiSwagger" },
   { id: "jwt", name: "JWT", category: "Other", icon: "SiJsonwebtokens" },
@@ -60,6 +59,6 @@ export const skills: Skill[] = [
     id: "responsive",
     name: "Responsive Design",
     category: "Other",
-    icon: "SiCss3",
+    icon: "SiCss",
   },
 ];

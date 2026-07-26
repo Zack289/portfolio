@@ -3,7 +3,7 @@ import type { Certificate } from "@/types";
 export const certificates: Certificate[] = [
   {
     id: "cert-1",
-    title: "Not available for now...",
+    title: "Not available for now... Looking for the opportunities..",
     issuer: "",
     date: "",
     credentialUrl: "",
