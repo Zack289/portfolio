@@ -22,7 +22,13 @@ export interface EducationEntry {
   highlights?: string[];
 }
 
-export type SkillCategory = "Frontend" | "Backend" | "Database" | "Languages" | "Tools" | "Other";
+export type SkillCategory =
+  | "Frontend"
+  | "Backend"
+  | "Database"
+  | "Languages"
+  | "Tools"
+  | "Other";
 
 export interface Skill {
   id: string;

@@ -24,7 +24,7 @@ export function Hero() {
               variants={fadeUp}
               className="mt-6 font-display text-4xl font-medium leading-[1.1] tracking-tight text-ink-900 dark:text-paper-50 sm:text-6xl"
             >
-              {profile.name.split(" ")[0]}, crafting
+              I'm {profile.name.split(" ")[0]}, crafting
               <br />
               <span className="text-brass-600 dark:text-brass-400">web</span> &amp;{" "}
               <span className="text-signal-600 dark:text-signal-400">mobile</span> experiences.

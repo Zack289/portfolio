@@ -6,7 +6,7 @@ export const education: EducationEntry[] = [
     institution: "Ambition College (Affiliated to Tribhuvan University)",
     degree: "B.Sc. CSIT",
     startYear: "2023",
-    endYear: "2027",
+    endYear: "Present",
     description:
       "Coursework in data structures, databases, and web systems, paired with self-directed projects covering the full MERN and PERN stacks.",
     highlights: [
@@ -14,17 +14,17 @@ export const education: EducationEntry[] = [
       "Explored systems topics independently: Kafka, virtualization, middleware",
     ],
   },
-  // {
-  //   id: "edu-2",
-  //   institution: "Self-Directed Study",
-  //   degree: "Full-Stack Web Development",
-  //   startYear: "2023",
-  //   endYear: "Present",
-  //   description:
-  //     "Ongoing, project-driven study of frontend architecture, backend APIs, and the tools around them — documented through real applications rather than certificates.",
-  //   highlights: [
-  //     "React, TypeScript, Node.js, Express, PostgreSQL, MongoDB",
-  //     "Docker, REST API design, authentication patterns",
-  //   ],
-  // },
+  {
+    id: "edu-2",
+    institution: "Himalayan White House Internatioal College",
+    degree: "NEB Intermediate Science",
+    startYear: "2021",
+    endYear: "2023",
+    description:
+      "Completed NEB intermediate science with a solid foundation in mathematics, computer fundamentals, and laboratory-based problem solving.",
+    highlights: [
+      "Achieved strong performance in mathematics, physics, and computing fundamentals",
+      "Built early programming projects and peer study routines to support later full-stack development learning",
+    ],
+  },
 ];

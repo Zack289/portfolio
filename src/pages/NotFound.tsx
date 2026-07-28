@@ -13,7 +13,10 @@ export function NotFound() {
           initial="hidden"
           animate="visible"
         >
-          <motion.p variants={fadeUp} className="font-mono text-sm text-brass-600 dark:text-brass-400">
+          <motion.p
+            variants={fadeUp}
+            className="font-mono text-sm text-brass-600 dark:text-brass-400"
+          >
             404
           </motion.p>
           <motion.h1
@@ -22,7 +25,10 @@ export function NotFound() {
           >
             This route doesn't exist.
           </motion.h1>
-          <motion.p variants={fadeUp} className="mt-3 text-sm text-ink-600 dark:text-ink-200/80">
+          <motion.p
+            variants={fadeUp}
+            className="mt-3 text-sm text-ink-600 dark:text-ink-200/80"
+          >
             The page you're looking for was moved, renamed, or never built.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8">

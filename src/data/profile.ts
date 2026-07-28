@@ -10,7 +10,7 @@ export const profile: Profile = {
   location: "Kathmandu, Nepal",
   email: "bhandarilaxman742@gmail.com",
   resumeUrl: "/resume.pdf", // drop your actual resume in /public
-  photoUrl: "/photo.jpg",
+  photoUrl: "/photo.jpeg",
   focusAreas: [
     "React & Next.js",
     "React Native",

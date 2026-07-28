@@ -11,10 +11,17 @@ import { projects } from "@/data/projects";
 import type { Project, ProjectCategory } from "@/types";
 import { cn } from "@/utils/cn";
 
-const filters: Array<ProjectCategory | "All"> = ["All", "Frontend", "Backend", "Full Stack", "UI/UX"];
+const filters: Array<ProjectCategory | "All"> = [
+  "All",
+  "Frontend",
+  "Backend",
+  "Full Stack",
+  "UI/UX",
+];
 
 export function AllProjects() {
-  const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]>("All");
+  const [activeFilter, setActiveFilter] =
+    useState<(typeof filters)[number]>("All");
   const [query, setQuery] = useState("");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -22,12 +29,15 @@ export function AllProjects() {
     const normalizedQuery = query.trim().toLowerCase();
 
     return projects.filter((project) => {
-      const matchesFilter = activeFilter === "All" || project.category === activeFilter;
+      const matchesFilter =
+        activeFilter === "All" || project.category === activeFilter;
       const matchesQuery =
         normalizedQuery.length === 0 ||
         project.title.toLowerCase().includes(normalizedQuery) ||
         project.category.toLowerCase().includes(normalizedQuery) ||
-        project.technologies.some((tech) => tech.toLowerCase().includes(normalizedQuery));
+        project.technologies.some((tech) =>
+          tech.toLowerCase().includes(normalizedQuery),
+        );
 
       return matchesFilter && matchesQuery;
     });
@@ -84,10 +94,17 @@ export function AllProjects() {
           </div>
         </div>
 
-        <motion.div layout className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          layout
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} onOpen={setSelectedProject} />
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onOpen={setSelectedProject}
+              />
             ))}
           </AnimatePresence>
         </motion.div>
@@ -99,7 +116,10 @@ export function AllProjects() {
         )}
       </Container>
 
-      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </div>
   );
 }

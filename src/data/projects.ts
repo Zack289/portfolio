@@ -124,10 +124,10 @@ export const projects: Project[] = [
       "This site — a React and TypeScript portfolio built with a component-driven, data-first architecture.",
     fullDescription:
       "The portfolio you're viewing right now: a React, TypeScript, and Tailwind CSS build with content fully separated from UI, so every section can be updated by editing data files.",
-    image: "/projects/portfolio/cover.jpg",
+    image: "/projects/portfolio/cover.png",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com/your-username/portfolio",
-    liveDemoUrl: "https://your-portfolio.example.com",
+    githubUrl: "https://github.com/Zack289/portfolio",
+    liveDemoUrl: "https://laxmanbhandari.com.np/",
     featured: false,
     category: "Frontend",
     status: "Completed",
