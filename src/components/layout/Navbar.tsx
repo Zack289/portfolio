@@ -95,13 +95,7 @@ export function Navbar() {
             <button
               type="button"
               className="flex h-9 w-9 items-center justify-center rounded-full border border-ink-700/15 text-ink-700 dark:border-paper-50/15 dark:text-ink-200 md:hidden"
-              onPointerDown={(event) => {
-                event.preventDefault();
-                toggleMenu();
-              }}
-              onClick={(event) => {
-                event.preventDefault();
-              }}
+              onClick={toggleMenu}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
             >
