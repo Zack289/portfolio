@@ -8,14 +8,13 @@ export function useClickOutside<T extends HTMLElement>(
   useEffect(() => {
     if (!enabled) return;
 
-    function handleClick(event: MouseEvent) {
+    function handlePointerDown(event: PointerEvent) {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         onOutsideClick();
       }
     }
 
-    // "click" (not "mousedown") so it doesn't fight with the button's own toggle click
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
   }, [ref, onOutsideClick, enabled]);
 }

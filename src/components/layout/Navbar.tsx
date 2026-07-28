@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import type { PointerEvent as ReactPointerEvent, MouseEvent as ReactMouseEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -15,6 +16,7 @@ import { cn } from "@/utils/cn";
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const suppressNextClickRef = useRef(false);
   const activeId = useActiveSection(navigation.map((item) => item.id));
   const scrollProgress = useScrollProgress();
   const isScrolled = scrollProgress > 0.02;
@@ -45,7 +47,20 @@ export function Navbar() {
     scrollToSection("#hero");
   }
 
-  function toggleMenu() {
+  function toggleMenu(event?: ReactPointerEvent<HTMLButtonElement> | ReactMouseEvent<HTMLButtonElement>) {
+    if (event?.type === "pointerdown") {
+      event.preventDefault();
+      event.stopPropagation();
+      suppressNextClickRef.current = true;
+      setIsMenuOpen((prev) => !prev);
+      return;
+    }
+
+    if (suppressNextClickRef.current) {
+      suppressNextClickRef.current = false;
+      return;
+    }
+
     setIsMenuOpen((prev) => !prev);
   }
 
@@ -94,8 +109,9 @@ export function Navbar() {
             <ThemeToggle />
             <button
               type="button"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-ink-700/15 text-ink-700 dark:border-paper-50/15 dark:text-ink-200 md:hidden"
-              onClick={toggleMenu}
+              className="flex h-9 w-9 touch-manipulation items-center justify-center rounded-full border border-ink-700/15 text-ink-700 dark:border-paper-50/15 dark:text-ink-200 md:hidden"
+              onPointerDown={(event) => toggleMenu(event)}
+              onClick={(event) => toggleMenu(event)}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
             >
