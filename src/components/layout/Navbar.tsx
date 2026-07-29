@@ -27,6 +27,7 @@ export function Navbar() {
   useClickOutside(headerRef, () => setIsMenuOpen(false), isMenuOpen);
 
   function handleNavigate(href: string) {
+    const wasMenuOpen = isMenuOpen;
     setIsMenuOpen(false);
 
     if (pathname !== "/") {
@@ -36,10 +37,18 @@ export function Navbar() {
       return;
     }
 
-    scrollToSection(href);
+    if (wasMenuOpen) {
+      // let the collapsing mobile menu finish its layout change first — firing both
+      // at once is what tends to get silently dropped on real touch devices
+      requestAnimationFrame(() => scrollToSection(href));
+    } else {
+      scrollToSection(href);
+    }
   }
 
   function handleLogoClick() {
+    setIsMenuOpen(false);
+
     if (pathname !== "/") {
       navigate("/");
       return;
@@ -79,7 +88,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={handleLogoClick}
-            className="font-display text-lg font-medium text-ink-900 dark:text-paper-50"
+            className="touch-manipulation font-display text-lg font-medium text-ink-900 dark:text-paper-50"
           >
             {profile.name.split(" ")[0]}
             <span className="text-brass-500">.</span>
@@ -92,7 +101,7 @@ export function Navbar() {
                   type="button"
                   onClick={() => handleNavigate(item.href)}
                   className={cn(
-                    "rounded-full px-4 py-2 font-mono text-xs tracking-wide transition-colors",
+                    "touch-manipulation rounded-full px-4 py-2 font-mono text-xs tracking-wide transition-colors",
                     pathname === "/" && activeId === item.id
                       ? "text-brass-600 dark:text-brass-400"
                       : "text-ink-600 hover:text-ink-900 dark:text-ink-300 dark:hover:text-paper-50",
@@ -138,7 +147,7 @@ export function Navbar() {
                       type="button"
                       onClick={() => handleNavigate(item.href)}
                       className={cn(
-                        "w-full rounded-lg px-3 py-3 text-left font-mono text-sm",
+                        "touch-manipulation w-full rounded-lg px-3 py-3 text-left font-mono text-sm",
                         pathname === "/" && activeId === item.id
                           ? "text-brass-600 dark:text-brass-400"
                           : "text-ink-700 dark:text-ink-200",
