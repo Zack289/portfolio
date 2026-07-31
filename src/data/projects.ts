@@ -3,7 +3,7 @@ import type { Project } from "@/types";
 // placeholder projects so the section isn't empty — swap urls/images for the real thing
 export const projects: Project[] = [
   {
-    id: "tomato",
+    id: "tomato-frontend",
     title: "Tomato — Multi Vendor E-commerce Platform",
     shortDescription:
       "A full-stack food ordering platform with cart, checkout, and an admin panel for managing menu items and orders.",
@@ -12,10 +12,10 @@ export const projects: Project[] = [
     image: "/projects/tomato/tomato.png",
     screenshots: ["/projects/tomato/1.jpg", "/projects/tomato/2.jpg"],
     technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    githubUrl: "https://github.com/your-username/tomato-food-delivery",
+    githubUrl: "https://github.com/Zack289/tomato-frontend",
     liveDemoUrl: "https://tomato-demo.example.com",
     featured: true,
-    category: "Full Stack",
+    category: "Frontend",
     status: "In Progress",
     year: "2025",
     highlights: [
@@ -206,14 +206,7 @@ export const projects: Project[] = [
     fullDescription:
       "Mojito Showcase is a sleek web application dedicated to displaying cocktail recipes, information, and a beautiful user experience. The project features smooth scrolling, animated transitions, and a fully responsive design that works seamlessly across all devices.",
     image: "/projects/mojito/cover.png",
-    technologies: [
-      "React",
-      "JS",
-      "Tailwind CSS",
-      "GSAP ",
-      "Lenis ",
-      "Vite ",
-    ],
+    technologies: ["React", "JS", "Tailwind CSS", "GSAP ", "Lenis ", "Vite "],
     githubUrl: "https://github.com/Zack289/gsap-mojito",
     liveDemoUrl: "https://gsap-mojito-ados.vercel.app/",
     featured: true,
@@ -227,6 +220,35 @@ export const projects: Project[] = [
       "Modern React: Built with React 19 and Vite for fast development and optimized production builds",
       "Lightweight and fast production build with Vite",
       "Component-Based Architecture: Well-organized component structure for maintainability",
+    ],
+  },
+
+  {
+    id: "tomato-backend",
+    title: "Tomato — Multi Vendor E-commerce Platform",
+    shortDescription:
+      "A full-stack food ordering platform with cart, checkout, and an admin panel for managing menu items and orders.",
+    fullDescription:
+      "Tomato is a food delivery web app where users browse a restaurant menu, manage a cart, and place orders, while an admin dashboard handles menu and order management in real time.",
+    image: "/projects/tomato/tomato.png",
+    screenshots: ["/projects/tomato/1.jpg", "/projects/tomato/2.jpg"],
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+    githubUrl: "https://github.com/Zack289/tomato-services",
+    liveDemoUrl: "https://tomato-demo.example.com",
+    featured: true,
+    category: "Backend",
+    status: "In Progress",
+    year: "2025",
+    highlights: [
+      "Cart and checkout flow with persisted state",
+      "Admin panel for live order and menu management",
+      "JWT-based authentication for users and admins",
+    ],
+    challenges: [
+      "Keeping order status in sync between the admin panel and the customer view.",
+    ],
+    solutions: [
+      "Introduced polling on the order feed, later structured for an easy swap to websockets.",
     ],
   },
 ];
